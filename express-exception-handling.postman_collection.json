@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "6abdddda-0d72-4a1f-a4fd-343f288ffc53",
+		"name": "express-exception-handling",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01. Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02. Create Post - Success - Api/v1/post/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Hanuman Amar Chitra Katha\",\r\n    \"author\": \"Anant Pai\",\r\n    \"url\": \"https://zod.dev\",\r\n    \"content\": \"Please check content in amazon ebook\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/post/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"post",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03. Create Post - Failure - Api/v1/post/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Hanuman Amar Chitra Katha\",\r\n    \"author\": \"Anant Pai\",\r\n    \"url\": \"www.amazon.in/Hanuman-1-ANANT-PAI-ebook/dp/B01N1270NX/ref=lp_20912611031_1_3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04. Get Posts - Success - api/v1/post?title=",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/post?title=Hanuman Amar Chitra Katha",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Hanuman Amar Chitra Katha"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05. Get Posts - failure - api/v1/post?title=",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/post?title=13213",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "13213"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06. Get Post By Id - Success - api/v1/post/507f1f77bcf86cd799439011",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/post/507f1f77bcf86cd799439011",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"post",
+						"507f1f77bcf86cd799439011"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "07. Get Post By Id - Failure - api/v1/post/507f1f77bcf86cd",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/post/507f1f77bcf86cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"post",
+						"507f1f77bcf86cd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "08. Update Post - Success - api/v1/post/507f1f77bcf86cd799439011",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Hanuman Amar Chitra Katha\",\r\n    \"author\": \"Anant Pai\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/post/507f1f77bcf86cd799439011",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"post",
+						"507f1f77bcf86cd799439011"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "09. Update Post - Failure - api/v1/post/507f1f77bcf86cd7",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Hanuman Amar Chitra Katha\",\r\n    \"author\": \"Anant Pai\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/post/507f1f77bcf86cd7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"post",
+						"507f1f77bcf86cd7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. Delete Post - Success - api/v1/post/507f1f77bcf86cd799439011",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/post/507f1f77bcf86cd799439011",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"post",
+						"507f1f77bcf86cd799439011"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11. Delete Post - Failure - api/v1/post/507f1f77bcf86cd",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/post/507f1f77bcf86cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"post",
+						"507f1f77bcf86cd"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
